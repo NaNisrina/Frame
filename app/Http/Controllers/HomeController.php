@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function admin() {
         return view('admin.admin');
     }
 
@@ -16,9 +16,13 @@ class HomeController extends Controller
 
     // past
 
-    // public function index() {
-    //     return view('home');
-    // }
+    public function index() {
+        return view('home');
+    }
+    public function master() {
+        return view('projects');
+    }
+
     // public function index() {
     //     return view('welcome');
     // }

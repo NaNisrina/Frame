@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function index(){
+    public function master(){
         return view('admin.mastercontact');
     }
     public function create(){
@@ -16,7 +16,7 @@ class ContactController extends Controller
         return view('admin.editcontact');
     }
 
-    // public function index(){
-    //     return view('contact');
-    // }
+    public function index(){
+        return view('contact');
+    }
 }

@@ -51,6 +51,7 @@
                     <a class="nav-link active" href="{{route ('about')}}">About</a>
                     <a class="nav-link active" href="{{route ('projects')}}">Projects</a>
                     <a class="nav-link active" href="{{route ('contact')}}">Contact</a>
+                    <a class="nav-link active" href="{{route ('admin') }}">Admin</a>
                 </div>
             </div>
         </div>
@@ -59,7 +60,7 @@
     @yield('navbar_footer')
     <!--Footer-->
     <footer class="bg-primary text-white text-center p-3">
-        <p>Made with ❤ by <a href="#" class="text-white fw-bold">Guwe</a></p>
+        <p>Made with ❤ by <a href="" class="text-white fw-bold">Guwe</a></p>
     </footer>
     <!--End of footer-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

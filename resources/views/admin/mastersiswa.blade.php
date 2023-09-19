@@ -31,7 +31,7 @@
                 <!-- Body -->
                 <div class="card-body overflow-auto table-responsive">
                     <!-- Table -->
-                    <table class="table table-striped table-dark table-borderless table-hover">
+                    <table class="table table-striped table-dark table-hover">
 
                         <!-- Table Head -->
                         <thead class="thead-dark">
