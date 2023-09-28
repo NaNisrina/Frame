@@ -6,7 +6,14 @@
 
     <div class="row card-body">
 
-        <div class="col-lg-5">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display:inline-block;">
+                {{ session()->get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        <div class="col-lg-6">
             <div class="card shadow">
 
                 <div class="card-header">
@@ -33,7 +40,7 @@
                                     <a class="btn btn-info" onclick="show({{ $data->id }})">
                                         <i class="text-white fas fa-fw fa-solid fa-folder-open"></i>
                                     </a>
-                                    <a class="btn btn-success" href="{{ route('projects.create', $data->id) }}">
+                                    <a class="btn btn-success" href="{{ route('projects.add', $data->id) }}">
                                         <i class="fas fa-fw fa-solid fa-plus"></i>
                                     </a>
                                 </td>
@@ -47,7 +54,7 @@
             </div>
         </div>
 
-        <div class="col-lg-5">
+        <div class="col-lg-6">
             <div class="card shadow">
 
                 <div class="card-header">

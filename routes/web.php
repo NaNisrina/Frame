@@ -32,9 +32,12 @@ Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy'])->name('d
 
 // Master Projects
 Route::resource('/admin/projects', ProjectsController::class);
+Route::get('/admin/project/{id}/create', [ProjectsController::class, 'add'])->name('projects.add');
+
 // Route::get('/projects', [ProjectsController::class, 'index'])->name('masterprojects');
 // Route::get('/createprojects', [ProjectsController::class, 'create'])->name('createprojects');
 // Route::get('/editprojects', [ProjectsController::class, 'edit'])->name('editprojects');
+
 // Master Contact
 Route::get('/admin/contact', [ContactController::class, 'master'])->name('mastercontact');
 Route::get('/admin/createcontact', [ContactController::class, 'create'])->name('createcontact');

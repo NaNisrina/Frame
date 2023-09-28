@@ -9,7 +9,7 @@
         <img src="img/ven.jpg?width=300&amp;height=300"
             alt="aaa" width="200" class=" rounded-circle img-thumbnail">
         <h1 class="display-4">Stress</h1>
-        <p class="lead">11 RPL 2 | Absen 16</p>
+        <p class="lead">12 RPL 2 | Absen 16</p>
     </section>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#e2edff" fill-opacity="1"
