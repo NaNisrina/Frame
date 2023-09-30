@@ -21,18 +21,20 @@ class ProjectsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
         // ($id)
-        // $data = Siswa::find($id);
-        // return view('admin.createprojects', compact('data'));
+        $data = Siswa::find($id);
+        return view('admin.createprojects', compact('data'));
 
         // return view('admin.createprojects');
     }
-    public function add($id) {
-        $data = Siswa::find($id);
-        return view('admin.createprojects', compact('data'));
-    }
+
+    // dor
+    // public function add() {
+    //     // $data = Siswa::find($id);
+    //     // return view('admin.createprojects', compact('data'));
+    // }
 
     /**
      * Store a newly created resource in storage.

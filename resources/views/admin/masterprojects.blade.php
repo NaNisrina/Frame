@@ -40,7 +40,7 @@
                                     <a class="btn btn-info" onclick="show({{ $data->id }})">
                                         <i class="text-white fas fa-fw fa-solid fa-folder-open"></i>
                                     </a>
-                                    <a class="btn btn-success" href="{{ route('projects.add', $data->id) }}">
+                                    <a class="btn btn-success" href="{{ route('projects.create', $data->id) }}">
                                         <i class="fas fa-fw fa-solid fa-plus"></i>
                                     </a>
                                 </td>
