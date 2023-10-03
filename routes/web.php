@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
@@ -18,30 +19,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Admin & Dashboard
-Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
-Route::get('/admin/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+// Login & Authentication
+Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
+Route::post('/admin/login', [LoginController::class, 'authenticate'])->name('login.auth');
 
-// Master Siswa
-Route::get('/admin/siswa', [SiswaController::class, 'index'])->name('mastersiswa');
-Route::get('/admin/createsiswa', [SiswaController::class, 'create'])->name('createsiswa');
-Route::post('/admin/storesiswa', [SiswaController::class, 'store'])->name('storesiswa');
-Route::get('/admin/siswa/{id}/editsiswa', [SiswaCOntroller::class, 'edit'])->name('editsiswa');
-Route::put('/admin/siswa/{id}', [SiswaController::class, 'update'])->name('updatesiswa');
-Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy'])->name('destroysiswa');
+// Auth
+Route::middleware(['auth', 'auth.session'])->group(function () {
+    // Admin & Dashboard
+    Route::get('/admin', [HomeController::class, 'admin'])->name('admin');
+    Route::get('/admin/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-// Master Projects
-Route::resource('/admin/projects', ProjectsController::class);
-Route::get('/admin/project/{id}/create', [ProjectsController::class, 'create'])->name('projects.create');
+    // Master Siswa
+    Route::get('/admin/siswa', [SiswaController::class, 'index'])->name('mastersiswa');
+    Route::get('/admin/createsiswa', [SiswaController::class, 'create'])->name('createsiswa');
+    Route::post('/admin/storesiswa', [SiswaController::class, 'store'])->name('storesiswa');
+    Route::get('/admin/siswa/{id}/editsiswa', [SiswaCOntroller::class, 'edit'])->name('editsiswa');
+    Route::put('/admin/siswa/{id}', [SiswaController::class, 'update'])->name('updatesiswa');
+    Route::delete('/admin/siswa/{id}', [SiswaController::class, 'destroy'])->name('destroysiswa');
+
+    // Master Projects
+    Route::resource('/admin/projects', ProjectsController::class);
+    Route::get('/admin/project/{id}/create', [ProjectsController::class, 'create'])->name('projects.create');
+
+    // Master Contact
+    Route::get('/admin/contact', [ContactController::class, 'master'])->name('mastercontact');
+    Route::get('/admin/createcontact', [ContactController::class, 'create'])->name('createcontact');
+    Route::get('/admin/editcontact', [ContactController::class, 'edit'])->name('editcontact');
+
+    // Logout
+    Route::post('/admin/logout', [LoginController::class, 'logout'])->name('logout');
+});
 
 // Route::get('/projects', [ProjectsController::class, 'index'])->name('masterprojects');
 // Route::get('/createprojects', [ProjectsController::class, 'create'])->name('createprojects');
 // Route::get('/editprojects', [ProjectsController::class, 'edit'])->name('editprojects');
-
-// Master Contact
-Route::get('/admin/contact', [ContactController::class, 'master'])->name('mastercontact');
-Route::get('/admin/createcontact', [ContactController::class, 'create'])->name('createcontact');
-Route::get('/admin/editcontact', [ContactController::class, 'edit'])->name('editcontact');
 
 // Portofolio
 Route::get('/', [HomeController::class, 'index'])->name('home');
