@@ -32,6 +32,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('css/template.css') }}">
+
 </head>
 
 <body id="page-top">
@@ -40,7 +43,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav color_test sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- bg-gradient-info -->
 
             <!-- Sidebar - Brand -->
@@ -190,7 +193,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-dark bg-dark topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-dark color_test topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-dark d-md-none rounded-circle mr-3">
@@ -361,7 +364,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="/img/undraw_profile.svg">
                             </a>
@@ -407,7 +410,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-dark">
+            <footer class="sticky-footer color_test">
                 <div class="container my-auto">
                     <div class=" text-white copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2020</span>
