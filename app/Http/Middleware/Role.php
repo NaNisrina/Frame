@@ -19,6 +19,7 @@ class Role
            return $next($request);
         }
 
+        toastr()->error('', 'Only Admin have this access');
         return redirect()->back();
     }
 }

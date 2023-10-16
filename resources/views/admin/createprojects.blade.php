@@ -19,6 +19,15 @@
 
                 <div class="card-body">
 
+                    @if (count($errors) > 0)
+                        @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $error }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endforeach
+                    @endif
+
                     <form method="POST" action="{{ route('projects.store') }}" enctype="multipart/form-data">
                         @csrf
 

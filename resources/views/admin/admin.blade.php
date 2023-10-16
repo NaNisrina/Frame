@@ -448,11 +448,11 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
 
-                        <input type="submit" class="btn btn-success" value="Logout">
+                        <input type="submit" class="btn btn-danger" value="Logout">
 
                     </form>
 
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    {{-- <a class="btn btn-primary" href="login.html">Logout</a> --}}
                 </div>
             </div>
         </div>
